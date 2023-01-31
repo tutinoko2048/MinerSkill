@@ -1,0 +1,36 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "MinerSkill v1.0.0",
+    "description": "整地に便利な採掘スキルを追加します\nMade by RetoRuto9900K / tutinoko2048",
+    "uuid": "0531ac0d-ed4c-473b-963e-5e554c6b1075",
+    "version": [ 1, 0, 0 ],
+    "min_engine_version": [ 1, 19, 50 ]
+  },
+  "modules": [
+    {
+      "version": [ 1, 0, 0 ],
+      "type": "data",
+      "uuid": "bed4011d-e4e8-4cba-baf4-ddcc72f0f7ed",
+      "description": "data module"
+    },
+    {
+      "version": [ 1, 0, 0 ],
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/index.js",
+      "uuid": "20d3ed1f-d62a-41ec-ab24-7661da5c85fc",
+      "description": "script module"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.1.0-beta"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.0.0-beta"
+    }
+  ]
+}
