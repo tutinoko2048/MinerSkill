@@ -34,7 +34,7 @@ export default {
     {
       name: "Skill 6",
       id: "skill6",
-      size: { height: 6, width: 3, depth: 1 },
+      size: { height: 4, width: 2, depth: 0 },
       tag: "tn:skill6"
     }
   ],
