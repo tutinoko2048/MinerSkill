@@ -1,3 +1,4 @@
+// @ts-check
 import { WorldLoadEventSignal } from './WorldLoadEvent';
 
 export const events = {

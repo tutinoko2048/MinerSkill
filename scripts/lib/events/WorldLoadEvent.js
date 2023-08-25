@@ -1,11 +1,14 @@
+// @ts-check
 import { world, system } from '@minecraft/server';
 import { BaseEventSignal } from './BaseEventSignal';
 
 let loaded = false;
 
 export class WorldLoadEvent {
+  /**@type {boolean} */
   #state;
   
+  /**@param {boolean} state */
   constructor(state) {
     this.#state = state;
   }
@@ -15,16 +18,19 @@ export class WorldLoadEvent {
   }
 }
 
+/**
+ * @extends {BaseEventSignal<WorldLoadEvent>}
+ */
 export class WorldLoadEventSignal extends BaseEventSignal {
   constructor() {
     super();
     
-    const run = system.runSchedule(() => {
+    const run = system.runInterval(() => {
       world.getDimension('overworld').runCommandAsync('testfor @a').then(() => {
         if (loaded) return;
         this.callbacks.forEach(fn => fn(new WorldLoadEvent(true)));
         loaded = true;
-        system.clearRunSchedule(run);
+        system.clearRun(run);
       });
     });
   }
