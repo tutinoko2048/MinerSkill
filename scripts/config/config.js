@@ -1,3 +1,23 @@
+// @ts-check
+/**
+ * @typedef Skill
+ * @prop {string} name
+ * @prop {string} id
+ * @prop {{height: number, width: number, depth: number}} size
+ * @prop {string} tag
+ * 
+ * @typedef AllowDenyList
+ * @prop {boolean | string[]} allow
+ * @prop {string[]} deny
+ */
+/**
+ * @type {{
+ *  ignoreCreative: boolean,
+ *  skills: Skill[],
+ *  block: AllowDenyList,
+ *  item: AllowDenyList
+ * }}
+ */
 export default {
   ignoreCreative: false,
   skills: [
@@ -39,12 +59,10 @@ export default {
     }
   ],
   block: {
-    /** @type {boolean|string[]} */
     allow: true,
     deny: [ 'minecraft:bedrock' ]
   },
   item: {
-    /** @type {boolean|string[]} */
     allow: true,
     deny: []
   }

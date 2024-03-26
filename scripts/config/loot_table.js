@@ -1,10 +1,39 @@
+// @ts-check
+/**
+ * @typedef ItemData
+ * @prop {string} item
+ * @prop {number} [amount]
+ * @prop {string} [nameTag]
+ * @prop {string[]} [lore]
+ * 
+ * @typedef ScoreData
+ * @prop {string} objective
+ * @prop {number} value
+ * 
+ * @typedef Loot
+ * @prop {ItemData[]} [gives]
+ * @prop {ScoreData[]} [scores]
+ * @prop {string[]} [commands]
+ * @prop {string} [message]
+ * @prop {string} [actionbar]
+ * @prop {boolean} [drop]
+ * @prop {number} [chance]
+ * @prop {(Loot & {range: number | number[]})[]} [randomize]
+ */
+/**
+ * @type {Record<string, Loot>}
+ */
 export default {
   "minecraft:dirt": {
     scores: [
       { objective: "mine", value: 2 }
     ]
   },
-  
+
+  "test": {
+    scores: []
+  },
+
   "minecraft:stone": {
     gives: [
       { item: "minecraft:emerald" }
@@ -13,7 +42,7 @@ export default {
       { objective: "mine", value: 2 }
     ],
     commands: [
-      
+
     ],
     actionbar: "§a%{player}§f が %{block} を壊した！ §7[%{x}, %{y}, %{z}]",
     chance: 99,
@@ -29,7 +58,7 @@ export default {
         ]
       },
       {
-        range: [ 1, 10 ],
+        range: [1, 10],
         gives: [
           { item: "minecraft:iron_ingot", amount: 1 }
         ]
@@ -78,31 +107,4 @@ export default {
       }
     ]
   }
-*/
-
-/* list of types
-type Loot = {
-  gives?: ItemData[],
-  scores?: ScoreData[],
-  commands?: string[],
-  message?: string,
-  actionbar?: string,
-  drop?: boolean,
-  chance?: number,
-  randomize?: Loot[],
-  range?: number[] | number
-}
-
-type ItemData = {
-  item: string,
-  amount?: number,
-  data?: number,
-  nameTag?: string,
-  lore?: string[]
-}
-
-type ScoreData = {
-  objective: string,
-  value: number
-}
 */
